@@ -2,11 +2,9 @@
 """
 From the previous file, import wait_n 
 """
-
-from typing import List
-from typing import Union
 import time
-import wait_n
+import asyncio
+wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
 def measure_time(n: int, max_delay: int) -> float:
@@ -14,7 +12,9 @@ def measure_time(n: int, max_delay: int) -> float:
     Measure the total execution time for wait_n
     """
     start = time.time()
-    wait_n.wait_n(n, max_delay)
+    asyncio.run(wait_n(n, max_delay))
     end = time.time()
-    total_time = end - start
-    return total_time / n
+
+    elpased_time = end - start
+
+    return float((elpased_time) / n)
