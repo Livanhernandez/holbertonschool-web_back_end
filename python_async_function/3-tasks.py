@@ -2,11 +2,11 @@
 """
 Import wait_random from 0-basic_async_syntax.
 """
-
 import asyncio
 import random
 
 wait_random = __import__('0-basic_async_syntax').wait_random
+
 
 async def task_wait_random(max_delay: int) -> asyncio.Task:
     """Return a task that waits a random amount of time."""
