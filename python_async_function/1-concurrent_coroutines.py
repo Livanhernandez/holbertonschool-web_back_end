@@ -6,8 +6,16 @@ wait_n should return the list of all the delays (float values). The list of the 
 """
 
 import asyncio
-import random
+from typing import List
+wait_random = __import__('0-basic_async_syntax').wait_random
 
-async def wait_random(max_delay: int) -> float:
-    """Return a random float between 0 and max_delay."""
-    return random.uniform(0, max_delay)
+
+async def wait_n(n: int, max_delay: int) -> List[float]:
+    """
+    Return a list of all the delays (float values).
+    The list of the delays should be in ascending order without using sort() because of concurrency.
+    """
+    list_of_delays = []
+    for i in range(n):
+        list_of_delays.append(await wait_random(max_delay))
+    return list_of_delays
