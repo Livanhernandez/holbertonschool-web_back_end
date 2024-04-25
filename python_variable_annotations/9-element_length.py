@@ -8,8 +8,8 @@ Function element_lenght hat takes a list
 from typing import Iterable, List, Tuple
 
 
-def element_lenght(lst: Iterable[str]) -> List[int]:
+def element_lenght(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
     """
     Function element_lenght
     """
-    return [len(i) for i in lst]
+    return [(i, len(i)) for i in lst]
