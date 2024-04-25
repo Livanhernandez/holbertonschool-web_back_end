@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-From the previous file, import wait_n 
+From the previous file, import wait_n
 """
 import time
 import asyncio
