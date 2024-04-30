@@ -1,3 +1,2 @@
-#!/bin/bash
-
-mongo --quiet --eval "db.adminCommand('listDatabases').databases.forEach(function(database) {print(database.name + ' ' + database.sizeOnDisk + 'GB')})"
+// List all databases
+show dbs
